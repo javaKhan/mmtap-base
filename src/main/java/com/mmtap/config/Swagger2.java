@@ -1,4 +1,4 @@
-package com.mmtap.base.config;
+package com.mmtap.config;
 
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
