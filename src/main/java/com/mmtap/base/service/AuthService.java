@@ -1,4 +1,4 @@
-package com.mmtap.security.service;
+package com.mmtap.base.service;
 
 /**
  * 权限业务

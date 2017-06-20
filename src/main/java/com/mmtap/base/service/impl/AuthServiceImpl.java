@@ -1,9 +1,9 @@
-package com.mmtap.security.service.impl;
+package com.mmtap.base.service.impl;
 
-import com.mmtap.security.dao.AuthDao;
-import com.mmtap.security.model.SysAuth;
-import com.mmtap.security.service.AuthService;
-import com.mmtap.security.service.BaseService;
+import com.mmtap.base.dao.AuthDao;
+import com.mmtap.base.model.SysAuth;
+import com.mmtap.base.service.AuthService;
+import com.mmtap.base.service.BaseService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 

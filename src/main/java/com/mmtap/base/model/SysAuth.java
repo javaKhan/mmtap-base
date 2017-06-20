@@ -1,9 +1,6 @@
-package com.mmtap.security.model;
+package com.mmtap.base.model;
 
 import javax.persistence.Entity;
-import javax.persistence.ManyToMany;
-import java.util.HashSet;
-import java.util.Set;
 
 /**
  * 用户权限类

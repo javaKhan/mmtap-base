@@ -1,9 +1,9 @@
-package com.mmtap.security.service.impl;
+package com.mmtap.base.service.impl;
 
-import com.mmtap.security.dao.GroupDao;
-import com.mmtap.security.model.SysGroup;
-import com.mmtap.security.service.BaseService;
-import com.mmtap.security.service.GroupService;
+import com.mmtap.base.dao.GroupDao;
+import com.mmtap.base.model.SysGroup;
+import com.mmtap.base.service.BaseService;
+import com.mmtap.base.service.GroupService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 

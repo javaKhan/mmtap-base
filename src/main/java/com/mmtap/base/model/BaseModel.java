@@ -1,4 +1,4 @@
-package com.mmtap.security.model;
+package com.mmtap.base.model;
 
 import com.fasterxml.jackson.annotation.JsonFormat;
 import org.hibernate.annotations.GenericGenerator;

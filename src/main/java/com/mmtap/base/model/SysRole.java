@@ -1,4 +1,4 @@
-package com.mmtap.security.model;
+package com.mmtap.base.model;
 
 import javax.persistence.Entity;
 import javax.persistence.ManyToMany;

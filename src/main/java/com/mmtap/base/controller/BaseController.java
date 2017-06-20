@@ -1,7 +1,7 @@
-package com.mmtap.security.controller;
+package com.mmtap.base.controller;
 
 
-import com.mmtap.security.service.BaseService;
+import com.mmtap.base.service.BaseService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
