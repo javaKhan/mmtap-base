@@ -9,12 +9,15 @@ import io.swagger.annotations.ApiParam;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
+import org.springframework.data.domain.Sort;
+import org.springframework.data.web.PageableDefault;
 import org.springframework.web.bind.annotation.*;
 
 /**
  * 用户控制器
  */
 @RestController
+@CrossOrigin
 public class UserController extends BaseController<SysUser, String> {
     @Autowired
     private UserServiceImpl userService;
@@ -45,7 +48,7 @@ public class UserController extends BaseController<SysUser, String> {
 
     @ApiOperation(value = "分页获取用户")
     @RequestMapping(value = "/user", method = RequestMethod.GET)
-    public Page findPage(Pageable pageable) {
+    public Page findUserPage(@ApiParam @PageableDefault(value = 15, sort = {"id"}, direction = Sort.Direction.DESC) Pageable pageable) {
         return this.findPage(pageable);
     }
 
