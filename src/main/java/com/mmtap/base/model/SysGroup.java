@@ -1,6 +1,9 @@
 package com.mmtap.base.model;
 
+import com.fasterxml.jackson.annotation.JsonBackReference;
+
 import javax.persistence.Entity;
+import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
 import java.util.HashSet;
 import java.util.Set;
@@ -10,18 +13,20 @@ import java.util.Set;
  */
 @Entity
 public class SysGroup extends BaseModel {
-    private String pid;
+
+    @ManyToOne
+    private SysGroup parent;
+
+
+    @OneToMany(mappedBy="parent")
+    @JsonBackReference
+    private Set<SysGroup> children = new HashSet<SysGroup>(0);
+
+
     @OneToMany(mappedBy = "group")
     private Set<SysUser> users = new HashSet();
 
 
-    public String getPid() {
-        return pid;
-    }
-
-    public void setPid(String pid) {
-        this.pid = pid;
-    }
 
     public Set<SysUser> getUsers() {
         return users;
@@ -29,5 +34,21 @@ public class SysGroup extends BaseModel {
 
     public void setUsers(Set<SysUser> users) {
         this.users = users;
+    }
+
+    public SysGroup getParent() {
+        return parent;
+    }
+
+    public void setParent(SysGroup parent) {
+        this.parent = parent;
+    }
+
+    public Set<SysGroup> getChildren() {
+        return children;
+    }
+
+    public void setChildren(Set<SysGroup> children) {
+        this.children = children;
     }
 }

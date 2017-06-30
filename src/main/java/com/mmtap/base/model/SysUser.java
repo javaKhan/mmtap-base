@@ -1,9 +1,6 @@
 package com.mmtap.base.model;
 
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.ManyToMany;
-import javax.persistence.ManyToOne;
+import javax.persistence.*;
 import java.util.HashSet;
 import java.util.Set;
 
@@ -18,6 +15,10 @@ public class SysUser extends BaseModel{
     private String password;
     private String email;
     private String mobile;
+    private String gender;
+    private String comment;
+
+
     @Column(nullable = false)
     private String state;
     @ManyToOne
@@ -81,5 +82,20 @@ public class SysUser extends BaseModel{
 
     public void setRoles(Set roles) {
         this.roles = roles;
+    }
+    public String getGender() {
+        return gender;
+    }
+
+    public void setGender(String gender) {
+        this.gender = gender;
+    }
+
+    public String getComment() {
+        return comment;
+    }
+
+    public void setComment(String comment) {
+        this.comment = comment;
     }
 }
