@@ -2,6 +2,7 @@ package com.mmtap.base.controller;
 
 import com.mmtap.base.model.SysAuth;
 import io.swagger.annotations.ApiOperation;
+import io.swagger.annotations.ApiParam;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 import org.springframework.web.bind.annotation.*;
@@ -10,11 +11,12 @@ import org.springframework.web.bind.annotation.*;
  * 权限控制器
  */
 @RestController
+@CrossOrigin
 public class AuthController extends BaseController<SysAuth,String>{
 
     @ApiOperation(value = "添加权限")
     @RequestMapping(value = "/auth",method = RequestMethod.PUT)
-    public Object addAuth(@RequestBody SysAuth auth){
+    public Object addAuth(@ApiParam @RequestBody SysAuth auth){
         return this.add(auth);
     }
 
@@ -32,13 +34,13 @@ public class AuthController extends BaseController<SysAuth,String>{
 
     @ApiOperation(value = "根据ID获取权限")
     @RequestMapping(value = "/auth/{id}",method = RequestMethod.GET)
-    public SysAuth getById(@PathVariable String id){
+    public SysAuth getById(@ApiParam @PathVariable String id){
         return this.find(id);
     }
 
     @ApiOperation(value = "分页获取权限")
     @RequestMapping(value = "/auth",method = RequestMethod.GET)
-    public Page<SysAuth> getAuthPage(Pageable pageable){
+    public Page<SysAuth> getAuthPage(@ApiParam Pageable pageable){
         return this.findPage(pageable);
     }
 

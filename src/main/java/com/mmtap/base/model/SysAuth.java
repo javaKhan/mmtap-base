@@ -1,6 +1,7 @@
 package com.mmtap.base.model;
 
 import javax.persistence.Entity;
+import javax.persistence.ManyToOne;
 
 /**
  * 用户权限类
@@ -8,8 +9,12 @@ import javax.persistence.Entity;
 @Entity
 public class SysAuth extends BaseModel {
     private String comment;
+    private String type;
     private String url;
-    private String pid;
+
+    @ManyToOne
+    private SysAuth parent;
+
 
 
     public String getComment() {
@@ -28,13 +33,19 @@ public class SysAuth extends BaseModel {
         this.url = url;
     }
 
-    public String getPid() {
-        return pid;
+    public String getType() {
+        return type;
     }
 
-    public void setPid(String pid) {
-        this.pid = pid;
+    public void setType(String type) {
+        this.type = type;
     }
 
+    public SysAuth getParent() {
+        return parent;
+    }
 
+    public void setParent(SysAuth parent) {
+        this.parent = parent;
+    }
 }

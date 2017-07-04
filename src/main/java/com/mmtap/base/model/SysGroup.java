@@ -24,6 +24,7 @@ public class SysGroup extends BaseModel {
 
 
     @OneToMany(mappedBy = "group")
+    @JsonBackReference
     private Set<SysUser> users = new HashSet();
 
 
