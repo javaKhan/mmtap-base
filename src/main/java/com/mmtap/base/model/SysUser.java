@@ -1,6 +1,7 @@
 package com.mmtap.base.model;
 
 import com.fasterxml.jackson.annotation.JsonBackReference;
+import com.fasterxml.jackson.annotation.JsonIgnore;
 
 import javax.persistence.*;
 import java.util.HashSet;
@@ -24,6 +25,7 @@ public class SysUser extends BaseModel{
     @Column(nullable = false)
     private String state;
     @ManyToOne
+    @JsonIgnore
     private SysGroup group;
     @ManyToMany
     private Set<SysRole> roles = new HashSet();
